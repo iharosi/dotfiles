@@ -9,5 +9,5 @@ __Warning:__ If you want to give these dotfiles a try, you should first fork thi
 1. ```~/.dotfiles/bootstrap.zsh```
 
 ## Thanks to…  
-* [mathiasbynens](http://mathiasbynens.be/)  
-* [loonkwil](http://mathiasbynens.be/)
+* [mathiasbynens](https://github.com/mathiasbynens/dotfiles)  
+* [loonkwil](https://github.com/loonkwil/dotfiles)
