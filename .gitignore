@@ -1,0 +1,21 @@
+# Compiled Python files
+*.pyc
+
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# Sublime Text 2 File upload plugin config file
+ftpsync.settings
+
+# Sass cache directory
+.sass-cache
+
