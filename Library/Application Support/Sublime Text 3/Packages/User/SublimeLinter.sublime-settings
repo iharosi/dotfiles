@@ -1,0 +1,14 @@
+// SublimeLinter Settings - User
+{
+    "linters": {
+        "tslint": {
+            "disable": true
+        },
+        "eslint": {
+            "disable": false
+        },
+        "jshint": {
+            "disable": true
+        }
+    },
+}

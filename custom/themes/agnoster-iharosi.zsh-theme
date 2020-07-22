@@ -27,10 +27,7 @@
 # A few utility functions to make it easy and re-usable to draw segmented prompts
 
 CURRENT_BG='NONE'
-SEGMENT_SEPARATOR=''
-
-ONLINE='%{%F{green}%}◉'
-OFFLINE='%{%F{red}%}⦿'
+SEGMENT_SEPARATOR=''
 
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
@@ -83,47 +80,13 @@ prompt_git() {
     else
       prompt_segment green black
     fi
-    echo -n "${ref/refs\/heads\// }$dirty"
+    echo -n " ${ref/refs\/heads\// }$dirty"
   fi
-}
-
-function online_check() {
-    ping -c 1 -W 1 -o 8.8.8.8 2>/dev/null | grep 'received' | awk '{print $4}'
-}
-
-function prompt_online() {
-  if [[ $(online_check) == 0 ]]; then
-    echo $OFFLINE
-  else
-    echo $ONLINE
-  fi
-}
-
-function battery_charge() {
-    TOTAL=10
-    CURRENT=$[$(pmset -g ps | sed -n 's/.*[[:blank:]]+*\(.*\)%.*/\1/p')/10]
-    GRAPH=''
-    COUNTER=1
-    while [ $COUNTER -lt 11 ]; do
-        if [ $COUNTER -le $CURRENT ]; then
-            GRAPH=$GRAPH'◼'
-        else
-            GRAPH=$GRAPH'◻'
-        fi
-        let COUNTER=COUNTER+1
-    done
-    if [ $CURRENT -ge 5 ]; then
-        echo '%{%F{green}%}'$GRAPH
-    elif [ $CURRENT -ge 3 ]; then
-        echo '%{%F{yellow}%}'$GRAPH
-    else
-        echo '%{%F{red}%}'$GRAPH
-    fi
 }
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment blue black '%~'
+  prompt_segment 25 white ' %~'
 }
 
 # Status:
@@ -144,12 +107,83 @@ prompt_status() {
 build_prompt() {
   RETVAL=$?
   prompt_status
-  prompt_git
+  prompt_online
+  prompt_battery
   prompt_dir
+  prompt_git
   prompt_end
 }
 
-RPROMPT='$(prompt_online) $(battery_charge)'
+function online_check() {
+  ping -c 1 -W 1 -o 1.0.0.1 2>/dev/null | grep 'received' | awk '{print $4}'
+}
 
-PROMPT='%{%f%b%k%}$(build_prompt) 
+function prompt_online() {
+  if [[ $(online_check) == 0 ]]; then
+    prompt_segment black red ""
+  else
+    prompt_segment black white ""
+  fi
+}
+
+function prompt_battery() {
+  local source percent battery ac
+
+  battery="Battery Power"
+  ac="AC Power"
+  source=$(pmset -g ps | sed -nE "s/.+'(.+)'$/\1/p")
+  percent=$(pmset -g ps | sed -nE 's/.*[[:blank:]]+([[:digit:]]+)%.*/\1/p')
+
+  if [[ $source == $ac ]]; then
+    if [[ $percent == 100 ]]; then
+      prompt_segment black white ""
+    elif [[ $percent -ge 95 ]]; then
+      prompt_segment black white ""
+    elif [[ $percent -ge 90 ]]; then
+      prompt_segment black white ""
+    elif [[ $percent -ge 80 ]]; then
+      prompt_segment black white ""
+    elif [[ $percent -ge 65 ]]; then
+      prompt_segment black white ""
+    elif [[ $percent -ge 50 ]]; then
+      prompt_segment black white ""
+    elif [[ $percent -ge 40 ]]; then
+      prompt_segment black white ""
+    elif [[ $percent -ge 30 ]]; then
+      prompt_segment black white ""
+    elif [[ $percent -ge 10 ]]; then
+      prompt_segment black white ""
+    elif [[ $percent -ge 0 ]]; then
+      prompt_segment black red ""
+    fi
+  elif [[ $source == $battery ]]; then
+    if [[ $percent == 100 ]]; then
+      prompt_segment black white ""
+    elif [[ $percent -ge 95 ]]; then
+      prompt_segment black white ""
+    elif [[ $percent -ge 90 ]]; then
+      prompt_segment black white ""
+    elif [[ $percent -ge 80 ]]; then
+      prompt_segment black white ""
+    elif [[ $percent -ge 70 ]]; then
+      prompt_segment black white ""
+    elif [[ $percent -ge 60 ]]; then
+      prompt_segment black white ""
+    elif [[ $percent -ge 50 ]]; then
+      prompt_segment black white ""
+    elif [[ $percent -ge 40 ]]; then
+      prompt_segment black white ""
+    elif [[ $percent -ge 30 ]]; then
+      prompt_segment black white ""
+    elif [[ $percent -ge 20 ]]; then
+      prompt_segment black white ""
+    elif [[ $percent -ge 10 ]]; then
+      prompt_segment black white ""
+    elif [[ $percent -ge 0 ]]; then
+      prompt_segment black red ""
+    fi
+  fi
+}
+
+PROMPT='%{%f%b%k%}$(build_prompt)
 » '

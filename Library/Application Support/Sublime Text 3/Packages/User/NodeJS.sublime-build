@@ -1,0 +1,4 @@
+{
+    "shell_cmd": "/usr/bin/env node $file",
+    "selector": "source.js",
+}

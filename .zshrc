@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="iharosi"
+ZSH_THEME="agnoster-iharosi"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -40,16 +40,32 @@ ZSH_THEME="iharosi"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew bower git node npm sublime safe-paste colored-man-pages command-not-found sudo)
+plugins=(
+  battery
+  brew
+  colored-man-pages
+  docker
+  git
+  nmap
+  npm
+  sublime
+  safe-paste
+  systemd
+  sudo
+  vscode
+)
 
 source $ZSH/oh-my-zsh.sh
+# source $(brew --prefix asdf)/asdf.sh
+
+# fast node manager
+eval "$(fnm env --multi)"
 
 # Customize to your needs...
 alias netstat_osx="sudo lsof -i -P"
 alias mkdir="mkdir -p"
-alias mocha="mocha --reporter nyan --timeout 10000"
+alias npme="npm --registry registry.npmjs.eu"
+alias npmls="npm ls --depth=0"
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder;say flushed'
-export GREP_OPTIONS="--color=auto"
-export LESS_TERMCAP_md="$ORANGE"
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+alias locked='lsof +c 0 | grep "\.Trash"'

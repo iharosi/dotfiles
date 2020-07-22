@@ -91,6 +91,13 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 ###############################################################################
+# Mac App Store																	  #
+###############################################################################
+
+#Enable the Mac App Store hidden Debug menu
+defaults write com.apple.appstore ShowDebugMenu -bool true
+
+###############################################################################
 # Mail                                                                        #
 ###############################################################################
 

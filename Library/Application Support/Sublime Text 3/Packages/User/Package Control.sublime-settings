@@ -1,0 +1,43 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"install_prereleases":
+	[
+		"Babel"
+	],
+	"installed_packages":
+	[
+		"ApacheConf",
+		"Babel",
+		"Babel Snippets",
+		"BracketHighlighter",
+		"ColorPick",
+		"Dockerfile Syntax Highlighting",
+		"EditorConfig",
+		"Emmet",
+		"Git blame",
+		"GitGutter",
+		"HTMLBeautify",
+		"JsPrettier",
+		"LESS",
+		"Material Theme",
+		"MikrotikScript",
+		"nginx",
+		"OpenGL Shading Language (GLSL)",
+		"Package Control",
+		"Perl Completions",
+		"Pretty JSON",
+		"Pug",
+		"SCSS",
+		"SRT",
+		"sublime-text-2-buildview",
+		"SublimeLinter",
+		"SublimeLinter-eslint",
+		"SublimeLinter-jshint",
+		"SublimeLinter-tslint",
+		"TypeScript Syntax",
+		"ZSH"
+	]
+}
