@@ -12,6 +12,13 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin"
 # export PATH="$PATH:/Applications/microchip/xc8/v1.45/bin"
 export PATH="$PATH:${HOME}/.bin"
 
+# Fast Node Manager
+export PATH="$PATH:${HOME}/.fnm/current/bin"
+export FNM_MULTISHELL_PATH="${HOME}/.fnm/current"
+export FNM_DIR="${HOME}/.fnm/"
+export FNM_NODE_DIST_MIRROR=https://nodejs.org/dist
+export FNM_LOGLEVEL=info
+
 # Java JRE
 # export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
 # export JAVA_HOME="${HOME}/Applications/Java/jdk1.8.0_181.jdk/Contents/Home"

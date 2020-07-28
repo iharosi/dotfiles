@@ -3,7 +3,10 @@
 # Install latest LTS version
 fnm i 12
 
-# Use just installed version
+# Set latest LTS as default
+fnm default 12
+
+# Use latest LTS
 fnm use 12
 
 # Install global packages

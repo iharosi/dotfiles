@@ -56,10 +56,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-# source $(brew --prefix asdf)/asdf.sh
-
-# fast node manager
-eval "$(fnm env --multi)"
 
 # Customize to your needs...
 alias netstat_osx="sudo lsof -i -P"
