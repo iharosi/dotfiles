@@ -1,3 +1,13 @@
+# Find node_modules folder recursively and print reserved space
+function nmls() {
+    find . -name "node_modules" -type d -prune -print | xargs du -chs
+}
+
+# Delete node_modules folder recursively
+function nmrm() {
+    find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;
+}
+
 # Generate a random password
 # @param integer $1 = 64 number of characters
 # @param integer $2 = 0 exclude special characters
@@ -11,7 +21,7 @@ function randpass() {
 }
 
 # fast backup of a file or directory with timestamp
-function buf() {
+function bkp() {
   for name in ${@%/}; do
       cp -R $name{,$(date +.%Y.%m.%d.%H.%M.%S)}
   done
