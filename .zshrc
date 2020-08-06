@@ -50,6 +50,7 @@ plugins=(
   npm
   sublime
   safe-paste
+  ssh-agent
   systemd
   sudo
   vscode

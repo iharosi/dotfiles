@@ -38,6 +38,7 @@ installcask go2shell
 installcask imagealpha
 installcask imageoptim
 installcask iterm2
+installcask kap
 installcask keepingyouawake
 installcask macdown
 installcask microsoft-teams
@@ -59,6 +60,7 @@ brew install \
   fnm \
   gnupg \
   ios-deploy \
+  mas \
   mkvtoolnix \
   mplayer \
   nmap \
