@@ -5,7 +5,8 @@
             "disable": true
         },
         "eslint": {
-            "disable": false
+            "disable": false,
+            "env": {"PATH":"/Users/iharosi/.fnm/current/bin/"}
         },
         "jshint": {
             "disable": true

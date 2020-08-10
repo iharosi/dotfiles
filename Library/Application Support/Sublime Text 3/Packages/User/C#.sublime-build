@@ -1,0 +1,3 @@
+{
+    "shell_cmd": "mcs $file && mono $file_base_name.exe"
+}
