@@ -2841,7 +2841,7 @@
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>MesloLGSDZNerdFontComplete-Regular 12</string>
+			<string>HackNerdFontComplete-Regular 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
@@ -3946,14 +3946,14 @@
 		<string>3.3.6</string>
 		<string>3.3.11</string>
 		<string>3.3.12</string>
-		<string>3.3.4</string>
+		<string>3.3.0</string>
 		<string>3.3.1</string>
 		<string>3.3.3</string>
 		<string>3.3.7</string>
 		<string>3.3.9</string>
 		<string>3.2.9</string>
 		<string>3.3.2</string>
-		<string>3.3.0</string>
+		<string>3.3.4</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
@@ -3979,7 +3979,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{487, 828}</string>
+		<string>{262, 805}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -3990,7 +3990,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>586819788.83970499</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>100</integer>
+	<integer>101</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
@@ -4805,7 +4805,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-07-28T11:26:33Z</date>
+	<date>2020-08-11T17:33:50Z</date>
 	<key>SUUpdateGroupIdentifier</key>
 	<integer>3895003274</integer>
 	<key>SUUpdateRelaunchingMarker</key>
