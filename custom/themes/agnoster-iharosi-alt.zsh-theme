@@ -64,7 +64,7 @@ prompt_context() {
   local user=`whoami`
 
   if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.) $user%m"
+    prompt_segment black default "%(!.%{%F{yellow}%}.) $user@%m"
   fi
 }
 
@@ -100,7 +100,7 @@ prompt_status() {
   [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
 
-  [[ -n "$symbols" ]] && prompt_segment 25 default "$symbols"
+  [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
 
 function online_check() {

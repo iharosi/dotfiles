@@ -103,17 +103,6 @@ prompt_status() {
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
 
-## Main prompt
-build_prompt() {
-  RETVAL=$?
-  prompt_status
-  prompt_online
-  prompt_battery
-  prompt_dir
-  prompt_git
-  prompt_end
-}
-
 function online_check() {
   ping -c 1 -W 1 -o 1.0.0.1 2>/dev/null | grep 'received' | awk '{print $4}'
 }
@@ -183,6 +172,17 @@ function prompt_battery() {
       prompt_segment black red ""
     fi
   fi
+}
+
+## Main prompt
+build_prompt() {
+  RETVAL=$?
+  prompt_status
+  prompt_online
+  prompt_battery
+  prompt_dir
+  prompt_git
+  prompt_end
 }
 
 PROMPT='%{%f%b%k%}$(build_prompt)
