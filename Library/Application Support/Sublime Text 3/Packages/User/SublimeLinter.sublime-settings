@@ -1,15 +1,12 @@
 // SublimeLinter Settings - User
 {
     "linters": {
-        "tslint": {
-            "disable": true
-        },
         "eslint": {
-            "disable": false,
-            "env": {"PATH":"/Users/iharosi/.fnm/current/bin/"}
-        },
-        "jshint": {
-            "disable": true
+            "env": {
+              "PATH":"/Users/iharosi/.fnm/current/bin/"
+            },
+            "selector": "source.js, source.jsx, source.ts, source.tsx"
         }
     },
+    "show_panel_on_save": "view"
 }

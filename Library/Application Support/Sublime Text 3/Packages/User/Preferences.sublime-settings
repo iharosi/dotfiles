@@ -1,87 +1,87 @@
 {
-	"always_show_minimap_viewport": true,
-	"auto_complete_commit_on_tab": false,
-	"auto_complete_selector": "source - comment, meta.tag - punctuation.definition.tag.begin, text.html.basic",
-	"auto_complete_with_fields": true,
-	"binary_file_patterns":
-	[
-		"node_modules/**"
-	],
-	"bold_folder_labels": true,
-	"buildview.enabled": true,
-	"buildview.scroll": "bottom",
-	"caret_extra_bottom": 2,
-	"caret_extra_top": 2,
-	"caret_extra_width": 0,
-	"caret_style": "solid",
-	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
-	"create_window_at_startup": false,
-	"default_line_ending": "unix",
-	"ensure_newline_at_eof_on_save": true,
-	"fade_fold_buttons": false,
-	"file_exclude_patterns":
-	[
-		".DS_Store",
-		"dump.rdb",
-		"thumbs.db"
-	],
-	"folder_exclude_patterns":
-	[
-		".git",
-		".sass-cache"
-	],
-	"font_face": "Menlo",
-	"font_options":
-	[
-		"gray_antialias"
-	],
-	"font_size": 12.0,
-	"highlight_line": true,
-	"highlight_modified_tabs": true,
-	"ignored_packages":
-	[
-		"Vintage"
-	],
-	"indent_guide_options":
-	[
-		"draw_normal",
-		"draw_active"
-	],
-	"line_padding_bottom": 1,
-	"line_padding_top": 1,
-	"match_brackets": true,
-	"match_brackets_angle": true,
-	"match_brackets_braces": true,
-	"match_brackets_content": true,
-	"match_brackets_square": true,
-	"material_theme_accent_pink": true,
-	"material_theme_accent_scrollbars": true,
-	"material_theme_bullet_tree_indicator": true,
-	"material_theme_compact_sidebar": true,
-	"material_theme_contrast_mode": true,
-	"material_theme_small_statusbar": true,
-	"material_theme_small_tab": true,
-	"material_theme_tabs_separator": true,
-	"material_theme_titlebar": true,
-	"open_files_in_new_window": false,
-	"overlay_scroll_bars": "enabled",
-	"rulers":
-	[
-		100
-	],
-	"save_on_focus_lost": false,
-	"show_encoding": true,
-	"show_line_endings": true,
-	"show_panel_on_build": false,
-	"soda_classic_tabs": false,
-	"soda_folder_icons": false,
-	"tab_size": 2,
-	"theme": "Material-Theme.sublime-theme",
-	"translate_tabs_to_spaces": true,
-	"trim_automatic_white_space": false,
-	"trim_trailing_white_space_on_save": true,
-	"use_simple_full_screen": false,
-	"wide_caret": true,
-	"word_wrap": true,
-	"wrap_width": 100
+  "always_show_minimap_viewport": true,
+  "auto_complete_commit_on_tab": false,
+  "auto_complete_selector": "source - comment, meta.tag - punctuation.definition.tag.begin, text.html.basic",
+  "auto_complete_with_fields": true,
+  "binary_file_patterns":
+  [
+    "node_modules/**"
+  ],
+  "bold_folder_labels": true,
+  "buildview.enabled": true,
+  "buildview.scroll": "bottom",
+  "caret_extra_bottom": 2,
+  "caret_extra_top": 2,
+  "caret_extra_width": 0,
+  "caret_style": "solid",
+  "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+  "create_window_at_startup": false,
+  "default_line_ending": "unix",
+  "ensure_newline_at_eof_on_save": true,
+  "fade_fold_buttons": false,
+  "file_exclude_patterns":
+  [
+    ".DS_Store",
+    "dump.rdb",
+    "thumbs.db"
+  ],
+  "folder_exclude_patterns":
+  [
+    ".git",
+    ".sass-cache"
+  ],
+  "font_face": "Menlo",
+  "font_options":
+  [
+    "gray_antialias"
+  ],
+  "font_size": 12.0,
+  "highlight_line": true,
+  "highlight_modified_tabs": true,
+  "ignored_packages":
+  [
+    "Vintage",
+  ],
+  "indent_guide_options":
+  [
+    "draw_normal",
+    "draw_active"
+  ],
+  "line_padding_bottom": 1,
+  "line_padding_top": 1,
+  "match_brackets": true,
+  "match_brackets_angle": true,
+  "match_brackets_braces": true,
+  "match_brackets_content": true,
+  "match_brackets_square": true,
+  "material_theme_accent_pink": true,
+  "material_theme_accent_scrollbars": true,
+  "material_theme_bullet_tree_indicator": true,
+  "material_theme_compact_sidebar": true,
+  "material_theme_contrast_mode": true,
+  "material_theme_small_statusbar": true,
+  "material_theme_small_tab": true,
+  "material_theme_tabs_separator": true,
+  "material_theme_titlebar": true,
+  "open_files_in_new_window": false,
+  "overlay_scroll_bars": "enabled",
+  "rulers":
+  [
+    100
+  ],
+  "save_on_focus_lost": false,
+  "show_encoding": true,
+  "show_line_endings": true,
+  "show_panel_on_build": false,
+  "soda_classic_tabs": false,
+  "soda_folder_icons": false,
+  "tab_size": 2,
+  "theme": "Material-Theme.sublime-theme",
+  "translate_tabs_to_spaces": true,
+  "trim_automatic_white_space": false,
+  "trim_trailing_white_space_on_save": true,
+  "use_simple_full_screen": false,
+  "wide_caret": true,
+  "word_wrap": true,
+  "wrap_width": 100,
 }

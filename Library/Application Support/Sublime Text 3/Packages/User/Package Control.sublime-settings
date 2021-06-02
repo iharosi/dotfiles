@@ -23,7 +23,7 @@
 		"JsPrettier",
 		"LESS",
 		"Material Theme",
-		"MikrotikScript",
+		"MDX Syntax Highlighting",
 		"nginx",
 		"OpenGL Shading Language (GLSL)",
 		"Package Control",
@@ -35,9 +35,7 @@
 		"sublime-text-2-buildview",
 		"SublimeLinter",
 		"SublimeLinter-eslint",
-		"SublimeLinter-jshint",
-		"SublimeLinter-tslint",
 		"TypeScript Syntax",
 		"ZSH"
-	]
+	],
 }
