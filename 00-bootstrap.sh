@@ -33,7 +33,7 @@ function createSymlinks() {
         ".zshrc"
     )
     local DIR_TO_BE_LINKED=(
-        "Library/Application\ Support/Sublime\ Text\ 3/Packages/User"
+        "Library/Application Support/Sublime Text/Packages/User"
     )
 
     echo -n "2/3 Checking source files... "
