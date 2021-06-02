@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-# Get the path of the script, usually: ~/.dotfiles/02-ohmyzsh.zsh
+# Get the path of the script, usually: ~/.dotfiles/02-ohmyzsh.sh
 pushd $(dirname $0) > /dev/null
 SOURCE=$(pwd -P)
 popd > /dev/null

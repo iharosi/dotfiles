@@ -6,7 +6,7 @@ __Warning:__ If you want to give these dotfiles a try, you shouldn't! However if
 
 1. ```git clone https://github.com/iharosi/dotfiles.git ~/.dotfiles```
 1. Set your name and e-mail address in ```.gitconfig```
-1. ```~/.dotfiles/bootstrap.zsh```
+1. ```~/.dotfiles/00-bootstrap.sh```
 
 ## Thanks to…  
 * [mathiasbynens](https://github.com/mathiasbynens/dotfiles)  
