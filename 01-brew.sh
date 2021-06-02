@@ -3,6 +3,9 @@
 # Install command-line tools using Homebrew.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
+# Turn off brew analytics.
+brew analytics off
+
 # Make sure we’re using the latest Homebrew.
 brew update
 
@@ -20,8 +23,8 @@ brew tap homebrew/cask-fonts
 brew tap beeftornado/rmtree
 
 function installcask() {
-    if brew cask info "${@}" | grep "Not installed" > /dev/null; then
-        brew cask install "${@}"
+    if brew info --cask "${@}" | grep "Not installed" > /dev/null; then
+        brew info --cask "${@}"
     else
         echo "${@} is already installed."
     fi
@@ -49,7 +52,6 @@ installcask sublime-merge
 installcask sublime-text
 installcask suspicious-package
 installcask xquartz
-installcask visual-studio-code
 installcask vlc
 
 # Install tools
@@ -64,7 +66,6 @@ brew install \
   mkvtoolnix \
   mplayer \
   nmap \
-  python@3 \
   rclone \
   rename \
   ssh-copy-id \
