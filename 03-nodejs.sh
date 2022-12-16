@@ -1,13 +1,13 @@
 #!/usr/bin/env zsh
 
 # Install latest LTS version
-fnm i 14
+fnm install 16
 
 # Set latest LTS as default
-fnm default 14
+fnm default 16
 
 # Use latest LTS
-fnm use 14
+fnm use 16
 
 # Install global packages
-npm i -g diff-so-fancy eslint full-icu nodemon prettier tldr
+npm i -g diff-so-fancy eslint full-icu prettier tldr

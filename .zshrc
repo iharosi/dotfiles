@@ -44,16 +44,11 @@ plugins=(
   battery
   brew
   colored-man-pages
-  docker
   git
-  nmap
   npm
   sublime
   safe-paste
-  ssh-agent
-  systemd
   sudo
-  vscode
 )
 
 source $ZSH/oh-my-zsh.sh

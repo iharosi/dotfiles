@@ -11,6 +11,7 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin"
 # export PATH="$PATH:/usr/local/opt/node@12/bin"
 # export PATH="$PATH:/Applications/microchip/xc8/v1.45/bin"
 export PATH="$PATH:${HOME}/.bin"
+export PATH="$PATH:/opt/homebrew/bin"
 
 # Fast Node Manager
 export PATH="$PATH:${HOME}/.fnm/current/bin"

@@ -20,7 +20,7 @@ DOTFILES_TO_BE_LINKED=(
 
 function checkFiles() {
     # Checking source files
-    echo -n "1/4 Checking source files... "
+    echo -n "1/3 Checking source files... "
     for file in $FILES_TO_BE_LINKED; do
         if [ ! -f "$SOURCE/$file" ]; then
             echo "✗"
@@ -42,7 +42,7 @@ function checkFiles() {
 
 function installOhMyZsh() {
     # More about installing Oh-my-zsh: http://install.ohmyz.sh
-    echo -n "2/4 Installing Oh My ZSH... "
+    echo -n "2/3 Installing Oh My ZSH... "
 
     # Clone the oh-my-zsh git repo
     hash git >/dev/null \
@@ -58,7 +58,7 @@ function installOhMyZsh() {
 function createSymlinks() {
     # Create symlinks
 
-    echo -n "3/4 Linking custom files... "
+    echo -n "3/3 Linking custom files... "
 
     for file in $FILES_TO_BE_LINKED; do
         ln -sfF \
@@ -83,17 +83,6 @@ function createSymlinks() {
     echo "✔"
 }
 
-function changeToZsh() {
-    # Change the default shell
-    echo -n "4/4 Changing your default shell to zsh... "
-    chsh -s $(which zsh) || {
-        echo "✗"
-        echo "Default shell can not be changed"
-        exit 1
-    }
-    echo "✔"
-}
-
 # Install Oh My Zsh, if not installed already
 if [[ ! -d $ZSH && ! -d $ZSH_HOME ]];
 then
@@ -101,7 +90,7 @@ then
     checkFiles
     installOhMyZsh
     createSymlinks
-    changeToZsh
+    source "${HOME}/.zshenv"
     source "${HOME}/.zshrc"
 else
     echo "Oh My ZSH already installed, quitting..."

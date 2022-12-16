@@ -78,10 +78,10 @@ function doIt() {
     echo "Picking up environment variables..."
     source "$HOME/.zshenv"
     echo "Running install scripts... "
-    source "$SOURCE_DIR/01-brew.sh"
-    source "$SOURCE_DIR/02-ohmyzsh.sh"
+    source "$SOURCE_DIR/01-ohmyzsh.sh"
+    source "$SOURCE_DIR/02-brew.sh"
     source "$SOURCE_DIR/03-nodejs.sh"
-    # source "$SOURCE_DIR/04-macos.sh"
+    source "$SOURCE_DIR/04-macos.sh"
 }
 
 # Show a warning message, before the installation
