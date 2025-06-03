@@ -109,9 +109,9 @@ function online_check() {
 
 function prompt_online() {
   if [[ $(online_check) == 0 ]]; then
-    prompt_segment black red ""
+    prompt_segment black red "󰌙"
   else
-    prompt_segment black white ""
+    prompt_segment black white "󰌚"
   fi
 }
 
@@ -125,51 +125,51 @@ function prompt_battery() {
 
   if [[ $source == $ac ]]; then
     if [[ $percent == 100 ]]; then
-      prompt_segment black white ""
+      prompt_segment black white "󰂄"
     elif [[ $percent -ge 95 ]]; then
-      prompt_segment black white ""
+      prompt_segment black white "󰂅"
     elif [[ $percent -ge 90 ]]; then
-      prompt_segment black white ""
+      prompt_segment black white "󰂋"
     elif [[ $percent -ge 80 ]]; then
-      prompt_segment black white ""
+      prompt_segment black white "󰂊"
     elif [[ $percent -ge 65 ]]; then
-      prompt_segment black white ""
+      prompt_segment black white "󰂉"
     elif [[ $percent -ge 50 ]]; then
-      prompt_segment black white ""
+      prompt_segment black white "󰂈"
     elif [[ $percent -ge 40 ]]; then
-      prompt_segment black white ""
+      prompt_segment black white "󰂇"
     elif [[ $percent -ge 30 ]]; then
-      prompt_segment black white ""
+      prompt_segment black white "󰂇"
     elif [[ $percent -ge 10 ]]; then
-      prompt_segment black white ""
+      prompt_segment black white "󰂆"
     elif [[ $percent -ge 0 ]]; then
-      prompt_segment black red ""
+      prompt_segment black red "󰂆"
     fi
   elif [[ $source == $battery ]]; then
     if [[ $percent == 100 ]]; then
-      prompt_segment black white ""
+      prompt_segment black white "󰁹"
     elif [[ $percent -ge 95 ]]; then
-      prompt_segment black white ""
+      prompt_segment black white "󰁹"
     elif [[ $percent -ge 90 ]]; then
-      prompt_segment black white ""
+      prompt_segment black white "󰂂"
     elif [[ $percent -ge 80 ]]; then
-      prompt_segment black white ""
+      prompt_segment black white "󰂁"
     elif [[ $percent -ge 70 ]]; then
-      prompt_segment black white ""
+      prompt_segment black white "󰂀"
     elif [[ $percent -ge 60 ]]; then
-      prompt_segment black white ""
+      prompt_segment black white "󰁿"
     elif [[ $percent -ge 50 ]]; then
-      prompt_segment black white ""
+      prompt_segment black white "󰁾"
     elif [[ $percent -ge 40 ]]; then
-      prompt_segment black white ""
+      prompt_segment black white "󰁽"
     elif [[ $percent -ge 30 ]]; then
-      prompt_segment black white ""
+      prompt_segment black white "󰁽"
     elif [[ $percent -ge 20 ]]; then
-      prompt_segment black white ""
+      prompt_segment black white "󰁻"
     elif [[ $percent -ge 10 ]]; then
-      prompt_segment black white ""
+      prompt_segment black white "󰁻"
     elif [[ $percent -ge 0 ]]; then
-      prompt_segment black red ""
+      prompt_segment black red "󰁺"
     fi
   fi
 }
@@ -178,7 +178,6 @@ function prompt_battery() {
 build_prompt() {
   RETVAL=$?
   prompt_status
-  prompt_online
   prompt_battery
   prompt_dir
   prompt_git

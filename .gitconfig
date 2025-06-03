@@ -17,7 +17,7 @@
   s = status -s
 
   # Diff
-  d = diff
+  d = diff -w
 
   # Diff cached files included
   dc = diff --cached
@@ -89,7 +89,10 @@
   eol = native
 
   # Use d-s-f theme for diffs (npm i -g diff-so-fancy)
-  pager = diff-so-fancy | less --tabs=4 -R
+  pager = diff-so-fancy | less --tabs=4 -RFX
+
+[interactive]
+  diffFilter = diff-so-fancy --patch
 
 [color]
   # Use colors in Git commands that are capable of colored output when

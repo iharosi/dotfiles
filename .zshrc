@@ -49,6 +49,10 @@ plugins=(
   sublime
   safe-paste
   sudo
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  fast-syntax-highlighting
+  #zsh-autocomplete
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -61,3 +65,6 @@ alias npmls="npm ls --depth=0"
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder;say flushed'
 alias locked='lsof +c 0 | grep "\.Trash"'
+alias sshaddkey='ssh-add --apple-use-keychain ~/.ssh/id_rsa'
+
+eval "$(rbenv init - zsh)"

@@ -72,6 +72,12 @@ defaults write com.apple.finder _FXSortFoldersFirst -bool true
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
+# Enable spring loading for directories
+defaults write NSGlobalDomain com.apple.springing.enabled -bool true
+
+# Remove the spring loading delay for directories
+defaults write NSGlobalDomain com.apple.springing.delay -float 0
+
 # Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
@@ -117,8 +123,14 @@ defaults write com.apple.dock tilesize -int 48
 # Value can be: `genie`, `scale`, `suck`
 defaults write com.apple.dock mineffect -string "suck"
 
+# Re-enable slow motion effects
+defaults write com.apple.dock slow-motion-allowed -bool true
+
 # Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
+
+# Enable spring loading for all Dock items
+defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
 
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
