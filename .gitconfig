@@ -119,7 +119,7 @@
 
 [commit]
   # https://help.github.com/articles/signing-commits-using-gpg/
-  gpgsign = true
+  gpgsign = false
 
 [help]
   # Automatically correct and execute mistyped commands
@@ -137,32 +137,8 @@
   smudge = git-lfs smudge %f
 
 [pull]
-  rebase = true
+  rebase = false
   ff = true
 
 [commit]
   #template = ~/.gitmessage
-
-[diff]
-  # Detect copies as well as renames
-  renames = copies
-  tool = WebStorm
-
-[diff "bin"]
-  # Use `hexdump` to diff binary files
-  textconv = hexdump -v -C
-
-[difftool "WebStorm"]
-  cmd = /Applications/WebStorm.app/Contents/MacOS/webstorm diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")
-
-[merge]
-  # Include summaries of merged commits in newly created merge commit messages
-  log = false
-  tool = WebStorm
-
-[mergetool]
-  keepBackup = false
-
-[mergetool "WebStorm"]
-  cmd = /Applications/WebStorm.app/Contents/MacOS/webstorm merge $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE") $(cd $(dirname "$BASE") && pwd)/$(basename "$BASE") $(cd $(dirname "$MERGED") && pwd)/$(basename "$MERGED")
-  trustExitCode = true

@@ -1,5 +1,0 @@
-{
-  "additional_cli_args": {
-    "--config": "./.prettierrc.json"
-  }
-}

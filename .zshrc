@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster-iharosi"
+ZSH_THEME="agnoster-alternative"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -65,6 +65,13 @@ alias npmls="npm ls --depth=0"
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder;say flushed'
 alias locked='lsof +c 0 | grep "\.Trash"'
-alias sshaddkey='ssh-add --apple-use-keychain ~/.ssh/id_rsa'
+alias sshaddkey='find ~/.ssh -maxdepth 1 -type f -name "id_*" ! -name "*.pub" ! -name "*.ppk" -exec ssh-add --apple-use-keychain {} \;'
+alias fd="freedom.zsh"
 
-eval "$(rbenv init - zsh)"
+# Load rbenv automatically
+#eval "$(rbenv init - zsh)"
+
+# Load pyenv automatically
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"

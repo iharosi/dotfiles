@@ -32,9 +32,6 @@ function createSymlinks() {
         ".zshenv"
         ".zshrc"
     )
-    local DIR_TO_BE_LINKED=(
-        "Library/Application Support/Sublime Text/Packages/User"
-    )
 
     echo -n "2/3 Checking source files... "
     for file in $FILES_TO_BE_LINKED; do
@@ -58,17 +55,6 @@ function createSymlinks() {
                 exit 1
             }
     done
-    for dir in $DIR_TO_BE_LINKED; do
-        mkdir -p "$(dirname "${HOME}/${dir}")"
-        ln -sfF \
-            "${SOURCE_DIR}/${dir}" \
-            "${HOME}/${dir}" \
-            || {
-                echo "✗"
-                echo "Linking failed at $file"
-                exit 1
-            }
-    done
     echo "✔"
 }
 
@@ -81,7 +67,7 @@ function doIt() {
     source "$SOURCE_DIR/01-ohmyzsh.sh"
     source "$SOURCE_DIR/02-brew.sh"
     source "$SOURCE_DIR/03-nodejs.sh"
-    source "$SOURCE_DIR/04-macos.sh"
+    # source "$SOURCE_DIR/04-macos.sh"
 }
 
 # Show a warning message, before the installation
