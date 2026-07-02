@@ -9,7 +9,7 @@ cd $SOURCE;
 ZSH_HOME="${HOME}/.oh-my-zsh"
 OHMYZSH_REPO_URL="https://github.com/robbyrussell/oh-my-zsh.git"
 FILES_TO_BE_LINKED=(
-    "agnoster-alternative.zsh-theme"
+    "custom/themes/agnoster-alternative.zsh-theme"
     "custom/functions.zsh"
     "custom/freedom.zsh"
 )

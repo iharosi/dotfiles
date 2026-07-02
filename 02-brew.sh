@@ -15,8 +15,6 @@ brew upgrade
 # Add external repositories to homebrew
 # Fast Node Manager: https://github.com/Schniz/fnm
 brew tap Schniz/tap
-# Install nerd fonts: https://github.com/ryanoasis/nerd-fonts
-brew tap homebrew/cask-fonts
 # rmtree for uninstalling brew package with dependencies: https://github.com/beeftornado/homebrew-rmtree
 brew tap beeftornado/rmtree
 
@@ -25,7 +23,6 @@ brew install --cask font-hack-nerd-font \
   imageoptim \
   iterm2 \
   keepingyouawake \
-  macdown \
   microsoft-teams \
   microsoft-outlook \
   sublime-text

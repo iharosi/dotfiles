@@ -40,9 +40,6 @@ export GOPATH="$HOME/.go"
 export GOBIN="$GOPATH/bin"
 export PATH="$PATH:$GOBIN"
 
-# LM Studio CLI (lms)
-export PATH="$PATH:$HOME/.cache/lm-studio/bin"
-
 # ESP Matter
 export ESP_IDF_PATH="$HOME/Sites/other/esp-idf"
 export ESP_MATTER_PATH="$HOME/Sites/other/esp-matter"
@@ -61,5 +58,5 @@ export GPG_TTY=$(tty)
 # Fix ERR_OSSL_EVP_UNSUPPORTED
 #export NODE_OPTIONS="--openssl-legacy-provider"
 
-# Ollama to bind every interfaces
-# export OLLAMA_HOST="0.0.0.0:11434"
+# Disable Vite's automatic browser window open behavior
+export BROWSER=none
