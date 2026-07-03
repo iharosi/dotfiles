@@ -12,12 +12,6 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade
 
-# Add external repositories to homebrew
-# Fast Node Manager: https://github.com/Schniz/fnm
-brew tap Schniz/tap
-# rmtree for uninstalling brew package with dependencies: https://github.com/beeftornado/homebrew-rmtree
-brew tap beeftornado/rmtree
-
 # Install apps
 brew install --cask font-hack-nerd-font \
   imageoptim \
