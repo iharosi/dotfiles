@@ -1,0 +1,16 @@
+# Config for fd (custom/freedom.zsh).
+# Copy to ~/.config/freedom/config and edit. Keep the real file out of the repo.
+
+# Domains resolved by the VPN's DNS. Everything else goes to the LAN's DNS.
+# A suffix covers all of its subdomains.
+FD_DOMAINS=(
+  corp.example.com
+  internal.example.net
+)
+
+# Networks routed into the tunnel. Everything else goes through the local router.
+# The VPN's DNS servers are routed into the tunnel automatically.
+FD_ROUTES=(
+  10.0.0.0/24
+  192.168.100.0/24
+)
