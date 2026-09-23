@@ -23,13 +23,44 @@
 	<key>AiMaxTokens</key>
 	<integer>200000</integer>
 	<key>AiModel</key>
-	<string>claude-opus-4-6</string>
+	<string>claude-opus-4-8</string>
 	<key>AiResponseMaxTokens</key>
 	<integer>128000</integer>
 	<key>AitermURL</key>
 	<string>https://api.anthropic.com/v1/messages</string>
+	<key>ClaudeCodeTriggersInstalled</key>
+	<false/>
+	<key>ClaudeCodeWorkgroupUpsellSuppressed</key>
+	<true/>
 	<key>ClickToSelectCommand</key>
 	<false/>
+	<key>CodeReviewSavedPrompts</key>
+	<data>
+	W3sibmFtZSI6IkRlZmF1bHQiLCJ1dWlkIjoiOURFNzU5NjEtQzUyNy00REIzLTg2M0Mt
+	NjRGRjRDRDU5NUI0IiwidGV4dCI6IlJldmlldyB0aGUgcGVuZGluZyBjaGFuZ2VzIGlu
+	IHRoaXMgcmVwby4gRmxhZyBpc3N1ZXMgYSBjYXJlZnVsIG1haW50YWluZXIgd291bGQg
+	YmxvY2sgb24gYmVmb3JlIG1lcmdlLCBpbiByb3VnaGx5IHRoaXMgb3JkZXI6XG4gIDEu
+	IENvcnJlY3RuZXNzIOKAlCBsb2dpYyBlcnJvcnMsIGJyb2tlbiBpbnZhcmlhbnRzLCBt
+	aXNzZWQgZWRnZSBjYXNlcywgb2ZmLWJ5LW9uZSwgcmFjZXMsIGxpZmV0aW1lXC9tZW1v
+	cnkgYnVncywgZXJyb3IgcGF0aHMgdGhhdCBzd2FsbG93IGZhaWx1cmVzLlxuICAyLiBT
+	ZWN1cml0eSDigJQgaW5qZWN0aW9uLCBhdXRoblwvYXV0aHogbWlzdGFrZXMsIHNlY3Jl
+	dCBoYW5kbGluZywgdW5zYWZlIGRlc2VyaWFsaXphdGlvbiwgdW5zYWZlIGRlZmF1bHRz
+	LCBUT0NUT1UuXG4gIDMuIFJlbGlhYmlsaXR5ICYgcGVyZm9ybWFuY2Ug4oCUIGJsb2Nr
+	aW5nIHRoZSB3cm9uZyB0aHJlYWQsIHVuYm91bmRlZCByZXNvdXJjZSB1c2UsIGFjY2lk
+	ZW50YWwgTyhOwrIpLCByZXRyaWVzIHdpdGhvdXQgYmFja29mZiwgc2lsZW50IGZhaWx1
+	cmUgcGF0aHMuXG4gIDQuIENvbnRyYWN0IHJpc2sg4oCUIGJlaGF2aW9yIGNoYW5nZXMg
+	Y2FsbGVycyByZWx5IG9uLCBzaWxlbnRseSBjaGFuZ2VkIGRlZmF1bHRzLCBicm9rZW4g
+	YmFja3dhcmQgY29tcGF0aWJpbGl0eSwgbWlzc2luZyBtaWdyYXRpb25zLlxuXG5Gb3Ig
+	ZWFjaCBmaW5kaW5nIGNpdGUgYGZpbGU6bGluZWAsIGV4cGxhaW4gKndoeSogaXQgaXMg
+	d3JvbmcgKG5vdCB3aGF0IHRoZSBjb2RlIGRvZXMpLCBhbmQgcHJvcG9zZSBhIGNvbmNy
+	ZXRlIGZpeCB3aGVuIG9uZSBpcyBvYnZpb3VzLiBCZSBjYWxpYnJhdGVkOiBpZiBhIGZp
+	bmRpbmcgaXMgbm90IGhpZ2gtY29uZmlkZW5jZSwgc2F5IHNvIG9yIHNraXAgaXQuIFZl
+	cmlmeSBjbGFpbXMgYWdhaW5zdCB0aGUgYWN0dWFsIGNvZGUgcmF0aGVyIHRoYW4gaW5m
+	ZXJyaW5nIGZyb20gbmFtZXMuXG5cblNraXAgcHVyZSBzdHlsZSwgZm9ybWF0dGluZywg
+	bmFtaW5nLCBhbmQgYW55dGhpbmcgYSBsaW50ZXIgb3IgQ0kgYWxyZWFkeSBlbmZvcmNl
+	cy5cblxuSWYgeW91IGZpbmQgbm90aGluZyB3b3J0aCBmaXhpbmcsIHNheSBzbyBwbGFp
+	bmx5LiJ9XQ==
+	</data>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Aardvark Blue</key>
@@ -3737,6 +3768,8 @@
 	<false/>
 	<key>DoubleClickPerformsSmartSelection</key>
 	<false/>
+	<key>EnableAPIServer</key>
+	<true/>
 	<key>FlashTabBarInFullscreen</key>
 	<true/>
 	<key>HapticFeedbackForEsc</key>
@@ -4832,6 +4865,8 @@
 					<integer>1</integer>
 					<key>auto-rainbow style</key>
 					<integer>0</integer>
+					<key>draw separator between status bar and terminal</key>
+					<false/>
 					<key>font</key>
 					<string>.SFNS-Regular 12</string>
 					<key>remove empty components</key>
@@ -4884,6 +4919,8 @@
 								<integer>1</integer>
 								<key>auto-rainbow style</key>
 								<integer>0</integer>
+								<key>draw separator between status bar and terminal</key>
+								<false/>
 								<key>font</key>
 								<string>.AppleSystemUIFont 12</string>
 								<key>remove empty components</key>
@@ -4924,6 +4961,8 @@
 								<integer>1</integer>
 								<key>auto-rainbow style</key>
 								<integer>0</integer>
+								<key>draw separator between status bar and terminal</key>
+								<false/>
 								<key>font</key>
 								<string>.AppleSystemUIFont 12</string>
 								<key>remove empty components</key>
@@ -4962,6 +5001,8 @@
 								<integer>1</integer>
 								<key>auto-rainbow style</key>
 								<integer>0</integer>
+								<key>draw separator between status bar and terminal</key>
+								<false/>
 								<key>font</key>
 								<string>.AppleSystemUIFont 12</string>
 								<key>remove empty components</key>
@@ -5000,6 +5041,8 @@
 								<integer>1</integer>
 								<key>auto-rainbow style</key>
 								<integer>0</integer>
+								<key>draw separator between status bar and terminal</key>
+								<false/>
 								<key>font</key>
 								<string>.AppleSystemUIFont 12</string>
 								<key>remove empty components</key>
@@ -5038,11 +5081,24 @@
 								<integer>1</integer>
 								<key>auto-rainbow style</key>
 								<integer>0</integer>
+								<key>draw separator between status bar and terminal</key>
+								<false/>
 								<key>font</key>
 								<string>.AppleSystemUIFont 12</string>
 								<key>remove empty components</key>
 								<false/>
 							</dict>
+						</dict>
+					</dict>
+					<dict>
+						<key>class</key>
+						<string>iTermStatusBarRPCProvidedTextComponent</string>
+						<key>configuration</key>
+						<dict>
+							<key>knobs</key>
+							<dict/>
+							<key>registration request v2</key>
+							<string>CiJjbGF1ZGVfdXNhZ2Vfc3RhdHVzX2NvbXBhY3RfaW5saW5lEgcKBWtub2JzKANC5gIKIkNsYXVkZSBVc2FnZSDigJQgQ29tcGFjdCDCtyBJbmxpbmUS4wFMaXZlIENsYXVkZSBxdW90YTogNS1ob3VyIHNlc3Npb24gYW5kIHdlZWtseSB3aW5kb3dzLCB0aGUgc2FtZSBudW1iZXJzIGFzIENsYXVkZSBDb2RlJ3MgL3VzYWdlIHNjcmVlbi4gVGhpcyBlbnRyeSBpcyBmaXhlZCBhdCBDb21wYWN0IMK3IElubGluZSDigJQgZHJhZyBhIGRpZmZlcmVudCAiQ2xhdWRlIFVzYWdlIiBlbnRyeSBmcm9tIHRoaXMgbGlzdCBmb3IgYW5vdGhlciBzaXplIG9yIHN0eWxlLiIm4pyzIDE4JSDin7IxMDowOXBtIMK3IDklIMK3IDE1JSDin7JNb24tAABwQTIrZGV2LnRhdGVuZGF6aG91LmNsYXVkZS11c2FnZS5jb21wYWN0LWlubGluZUAA</string>
 						</dict>
 					</dict>
 				</array>
@@ -5068,6 +5124,8 @@
 			<string>xterm-256color</string>
 			<key>Transparency</key>
 			<real>0.047895471058245771</real>
+			<key>Triggers</key>
+			<array/>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -5157,16 +5215,33 @@
 	<false/>
 	<key>StatusBarPosition</key>
 	<integer>1</integer>
+	<key>StatusPriorityEntries</key>
+	<data>
+	W3sibm90aWZ5Ijp0cnVlLCJwYXR0ZXJuIjoid2FpdCJ9LHsibm90aWZ5IjpmYWxzZSwi
+	cGF0dGVybiI6IndvcmsifSx7Im5vdGlmeSI6ZmFsc2UsInBhdHRlcm4iOiJpZGxlIn1d
+	</data>
 	<key>StretchTabsToFillBar</key>
 	<false/>
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>5</integer>
 	<key>TabsHaveCloseButton</key>
 	<false/>
+	<key>ToolbeltTools</key>
+	<array>
+		<string>Session Status</string>
+		<string>Jobs</string>
+		<string>Recent Directories</string>
+		<string>Command History</string>
+		<string>Captured Output</string>
+	</array>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<true/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
+	<key>Workgroups</key>
+	<data>
+	W10=
+	</data>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewPreferredModeKey</key>

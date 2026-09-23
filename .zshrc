@@ -66,11 +66,13 @@ alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder;say flushed'
 alias locked='lsof +c 0 | grep "\.Trash"'
 alias sshaddkey='find ~/.ssh -maxdepth 1 -type f -name "id_*" ! -name "*.pub" ! -name "*.ppk" -exec ssh-add --apple-use-keychain {} \;'
+alias cl='claude'
 
 # Load rbenv automatically
 #eval "$(rbenv init - zsh)"
 
 # Load pyenv automatically
-#export PYENV_ROOT="$HOME/.pyenv"
-#[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-#eval "$(pyenv init - zsh)"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+

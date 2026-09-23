@@ -8,6 +8,7 @@ export LC_ALL="en_US.UTF-8"
 
 # Path
 export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$BREW/bin:$PATH"
 export PATH="$BREW/sbin:$PATH"
@@ -21,7 +22,7 @@ export FNM_NODE_DIST_MIRROR=https://nodejs.org/dist
 export FNM_LOGLEVEL=info
 
 # Java
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home"
 
 # Android
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -44,6 +45,9 @@ export PATH="$PATH:$GOBIN"
 export ESP_IDF_PATH="$HOME/Sites/other/esp-idf"
 export ESP_MATTER_PATH="$HOME/Sites/other/esp-matter"
 export IDF_CCACHE_ENABLE=1
+
+# KiCad
+export PATH="$HOME/Applications/KiCad/KiCad.app/Contents/MacOS:$PATH"
 
 export GREP_OPTIONS="--color=auto"
 export LESS_TERMCAP_md="$ORANGE"

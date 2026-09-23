@@ -27,3 +27,5 @@ Package Control.merged-ca-bundle
 Package Control.user-ca-bundle
 bh_core.sublime-settings
 oscrypto-ca-bundle.crt
+
+**/.claude/settings.local.json

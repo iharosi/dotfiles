@@ -1,13 +1,13 @@
 #!/usr/bin/env zsh
 
 # Install latest LTS version
-fnm install 22
+fnm install 24
 
 # Set latest LTS as default
-fnm default 22
+fnm default 24
 
 # Use latest LTS
-fnm use 22
+fnm use 24
 
 # Install global packages
 npm i -g diff-so-fancy tldr
