@@ -14,3 +14,7 @@ FD_ROUTES=(
   10.0.0.0/24
   192.168.100.0/24
 )
+
+# Seconds between keep-alive DNS queries through the tunnel (0 = off).
+# Keeps the VPN's idle timeout from disconnecting it while split. Default: 300.
+# FD_KEEPALIVE=300

@@ -8,9 +8,12 @@
 # this repo in ~/.config/freedom/config (see freedom.conf.example).
 # Run `fd` after every VPN connect; run it without a VPN to clean up leftovers.
 # `fd -f` re-applies everything and lets you pick the router again.
+# While split, a background keep-alive sends one DNS query through the tunnel every
+# FD_KEEPALIVE seconds, so the VPN's idle timeout doesn't disconnect it.
 
 typeset -g FD_CONFIG=${XDG_CONFIG_HOME:-$HOME/.config}/freedom/config
 typeset -g FD_SPLIT_KEY=State:/Network/Service/fd.split/DNS
+typeset -g FD_KEEPALIVE_PID=${TMPDIR:-/tmp}/fd-keepalive.pid
 
 _fd_sc_show()  { print "show $1" | scutil }
 _fd_sc_val()   { _fd_sc_show $1 | awk -v f="$2" '$1 == f {print $3; exit}' }
@@ -77,6 +80,35 @@ _fd_flush_dns() {
   sudo killall -HUP mDNSResponder
 }
 
+_fd_keepalive_stop() {
+  local pid
+  [[ -r $FD_KEEPALIVE_PID ]] && read -r pid < $FD_KEEPALIVE_PID
+  [[ -n $pid ]] && ps -p $pid -o command= | grep -q fd-keepalive && kill $pid 2>/dev/null
+  rm -f $FD_KEEPALIVE_PID
+}
+
+# Background loop: query <dns server> for <name> every FD_KEEPALIVE seconds.
+# Stops when <service key> disappears (VPN disconnected) or a newer loop takes over.
+_fd_keepalive_start() {
+  local key=$1 ns=$2 name=${3:-.}
+  _fd_keepalive_stop
+  (( FD_KEEPALIVE > 0 )) && [[ -n $ns ]] || return
+  zsh -fc '
+    trap "" HUP
+    while sleep $2; do
+      [[ $(<$1) == $$ ]] 2>/dev/null || exit
+      [[ $(print "show $3" | scutil) == *"No such key"* ]] && break
+      dig +short +time=3 +tries=1 @$4 $5
+    done
+    rm -f $1
+  ' fd-keepalive $FD_KEEPALIVE_PID $FD_KEEPALIVE $key $ns $name </dev/null >/dev/null 2>&1 &!
+  print $! > $FD_KEEPALIVE_PID
+}
+
+_fd_keepalive_every() {
+  (( FD_KEEPALIVE % 60 )) && print "${FD_KEEPALIVE}s" || print "$(( FD_KEEPALIVE / 60 )) min"
+}
+
 # Current setup as aligned rows. Uses fd's locals.
 _fd_summary() {
   local vpn_gw=$(_fd_sc_val ${svc_of[$vpn_if]}/IPv4 Router)
@@ -107,6 +139,23 @@ _fd_summary() {
   else
     _fd_row DNS "$RED✘$RESET Could not read DNS servers (LAN: ${lan_dns[*]:-none}, VPN: ${vpn_dns[*]:-none})"
   fi
+  echo
+
+  if [[ -r $FD_KEEPALIVE_PID ]]; then
+    _fd_row Keepalive "every $(_fd_keepalive_every) $DIM→$RESET $CYAN${vpn_dns[1]}$RESET $DIM(${FD_DOMAINS[1]:-.})$RESET"
+  elif (( FD_KEEPALIVE > 0 )); then
+    _fd_row Keepalive "$YELLOW!$RESET Not running (no VPN DNS server found)"
+  else
+    _fd_row Keepalive "${DIM}off (FD_KEEPALIVE=0)$RESET"
+  fi
+}
+
+_fd_keepalive_note() {
+  if [[ -r $FD_KEEPALIVE_PID ]]; then
+    print "Every $(_fd_keepalive_every), one tiny company lookup goes through the VPN, so it doesn't disconnect when idle."
+  else
+    print "Without VPN traffic, the VPN may disconnect when idle (e.g. after 30 minutes)."
+  fi
 }
 
 _fd_dns_note() {
@@ -122,6 +171,7 @@ fd() {
   local CYAN=$'\e[36m' WHITE=$'\e[37m' DIM=$'\e[2m' RESET=$'\e[0m'
 
   local -a FD_DOMAINS FD_ROUTES
+  local FD_KEEPALIVE=300
   [[ -r $FD_CONFIG ]] && source $FD_CONFIG
 
   local key ifc dev gw port choice net ns i err force dns_split already
@@ -139,6 +189,7 @@ fd() {
   done
 
   if [[ -z $vpn_if ]]; then
+    _fd_keepalive_stop
     if [[ -z $(_fd_sc_show $FD_SPLIT_KEY | grep ServerAddresses) ]]; then
       _fd_fail "The company VPN isn't connected." \
         "Connect the VPN first, then run ${WHITE}fd$RESET again."
@@ -223,11 +274,13 @@ fd() {
   if (( already && ! force )); then
     echo
     echo "  $GREEN✔︎$RESET Split tunnel is already on. Nothing was changed."
+    _fd_keepalive_start ${svc_of[$vpn_if]}/IPv4 ${vpn_dns[1]} ${FD_DOMAINS[1]}
     _fd_summary
     _fd_say "" "${WHITE}What does it mean for you?$RESET" \
       "Internet traffic goes through your own router ($lan_port), not the VPN." \
       "Company networks stay reachable through the VPN." \
       "$(_fd_dns_note)" \
+      "$(_fd_keepalive_note)" \
       "To pick another router or re-apply everything, run ${WHITE}fd -f$RESET."
     return
   fi
@@ -286,10 +339,12 @@ EOF
 
   echo
   echo "  $GREEN✔︎$RESET Split tunnel is on."
+  _fd_keepalive_start ${svc_of[$vpn_if]}/IPv4 ${vpn_dns[1]} ${FD_DOMAINS[1]}
   _fd_summary
   _fd_say "" "${WHITE}What does it mean for you?$RESET" \
     "Internet traffic now goes through your own router ($lan_port), not the VPN." \
     "Company networks stay reachable through the VPN." \
     "$(_fd_dns_note)" \
+    "$(_fd_keepalive_note)" \
     "Reconnected the VPN or woke from sleep? Run ${WHITE}fd$RESET again."
 }
